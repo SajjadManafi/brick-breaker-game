@@ -15,12 +15,14 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-
+    private boolean gameStarted = false;
     @Override
     public void start(Stage stage) throws Exception{
         Pane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main.fxml")));
         Board board = createBoard();
+        Ball ball = createBall();
         pane.getChildren().add(board);
+        pane.getChildren().add(ball);
         stage.setTitle("Brick Breaker");
         Scene scene = new Scene(pane);
         stage.setScene(scene);
@@ -34,6 +36,10 @@ public class Main extends Application {
         board.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
+                if (!gameStarted){
+                    gameStarted = true;
+                    System.out.println("game started!");
+                }
                 String keyName = keyEvent.getCode().getName();
                 switch (keyName) {
                     case "Left" -> board.moveLeft();
@@ -43,9 +49,10 @@ public class Main extends Application {
         });
         return board;
     }
-    @FXML
-    public void initialize(){
 
+    private Ball createBall() {
+        Ball ball = new Ball();
+        return ball;
     }
 
     public static void main(String[] args) {

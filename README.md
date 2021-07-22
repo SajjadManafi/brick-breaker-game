@@ -6,5 +6,6 @@ for use: just run Main.java file =)
 
 configure IntelliJ for javafx:
 
-https://www.jetbrains.com/help/idea/javafx.html
-https://www.jetbrains.com/help/idea/opening-fxml-files-in-javafx-scene-builder.html
+1) https://www.jetbrains.com/help/idea/javafx.html
+
+2) https://www.jetbrains.com/help/idea/opening-fxml-files-in-javafx-scene-builder.html

@@ -14,7 +14,6 @@
       fx:controller="sample.Main"
       prefHeight="400.0" prefWidth="600.0">
 
-    <Rectangle fx:id="board" layoutX="275" layoutY="320" width="50" height="15" styleClass="board"/>
 
     <stylesheets>
         <URL value="@main.css"/>

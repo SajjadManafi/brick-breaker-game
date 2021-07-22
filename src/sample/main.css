@@ -3,3 +3,7 @@
     -fx-arc-width: 20;
     -fx-arc-height: 20;
 }
+
+.brick {
+    -fx-fill: #ffc008;
+}

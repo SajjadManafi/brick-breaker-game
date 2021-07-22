@@ -3,6 +3,8 @@ package sample;
 import javafx.animation.Transition;
 import javafx.util.Duration;
 
+import java.util.ArrayList;
+
 public class BallAnimation extends Transition {
     private Ball ball;
     private Board board;
@@ -23,6 +25,13 @@ public class BallAnimation extends Transition {
         ball.move(dx , dy);
         if (ball.hasCollision(board))
             theta = 360 - theta;
+        for (Brick brick: Brick.getAllBricks()) {
+           if (ball.hasCollision(brick)) {
+               theta = 360 - theta;
+                brick.remove();
+                break;
+           }
+        }
         if (ball.hitTopWall())
             theta = -theta;
         if (ball.hitLeftWall())

@@ -39,7 +39,8 @@ public class Main extends Application {
             public void handle(KeyEvent keyEvent) {
                 if (!gameStarted) {
                     gameStarted = true;
-                    System.out.println("game started!");
+                    BallAnimation animation = new BallAnimation(Ball.getInstance());
+                    animation.play();
                 }
                 String keyName = keyEvent.getCode().getName();
                 switch (keyName) {
@@ -52,8 +53,7 @@ public class Main extends Application {
     }
 
     private Ball createBall() {
-        Ball ball = new Ball();
-        return ball;
+        return Ball.getInstance();
     }
 
     public static void main(String[] args) {

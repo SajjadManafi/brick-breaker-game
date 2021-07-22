@@ -28,6 +28,7 @@ public class BallAnimation extends Transition {
         for (Brick brick: Brick.getAllBricks()) {
            if (ball.hasCollision(brick)) {
                theta = 360 - theta;
+               brick.explode();
                 brick.remove();
                 break;
            }

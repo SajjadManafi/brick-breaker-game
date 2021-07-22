@@ -16,8 +16,9 @@ import java.util.Objects;
 public class Main extends Application {
 
     private boolean gameStarted = false;
+
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception {
         Pane pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("main.fxml")));
         Board board = createBoard();
         Ball ball = createBall();
@@ -31,12 +32,12 @@ public class Main extends Application {
         stage.show();
     }
 
-    private Board createBoard(){
+    private Board createBoard() {
         Board board = new Board();
         board.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                if (!gameStarted){
+                if (!gameStarted) {
                     gameStarted = true;
                     System.out.println("game started!");
                 }

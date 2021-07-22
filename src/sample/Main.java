@@ -39,7 +39,7 @@ public class Main extends Application {
             public void handle(KeyEvent keyEvent) {
                 if (!gameStarted) {
                     gameStarted = true;
-                    BallAnimation animation = new BallAnimation(Ball.getInstance());
+                    BallAnimation animation = new BallAnimation(Ball.getInstance() , board);
                     animation.play();
                 }
                 String keyName = keyEvent.getCode().getName();

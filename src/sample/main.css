@@ -1,0 +1,5 @@
+.board {
+    -fx-fill: #ac69ff;
+    -fx-arc-width: 20;
+    -fx-arc-height: 20;
+}
